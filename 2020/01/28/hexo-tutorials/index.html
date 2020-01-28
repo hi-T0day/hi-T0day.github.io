@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+
+    
+
+    
+
+    <title>Hexo安装记录 | T0day&#39;Blog</title>
+    <meta name="author" content="T0day" />
+    <meta name="keywords" content="" />
+    <meta name="description" content="这篇文章是本站点使用Hexo框架以及Concise模版进行安装的纪实。我会不断更新文章，探索出更多有用的功能。本文按照这些问题的思路来进行一步步的安装！ Q1: Hexo是什么？Q2: 如何安装Hexo？Q3: 如何写文章？Q4: 可以使用哪些有意思的插件？Hexo是什么？问题分析：Hexo的概述 -&amp;gt; Hexo的部署方式  -&amp;gt; Hexo的优点Hexo是一款基于Node.js的一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染..." />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+
+    
+    <link rel="alternate" href="/atom.xml" title="T0day&#39;Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/images/favicon.ico">
+    
+
+    <style type="text/css">
+    @font-face {
+        font-family: 'icomoon';
+        src: url("/fonts/icomoon.eot?q628ml");
+        src: url("/fonts/icomoon.eot?q628ml#iefix") format('embedded-opentype'),
+             url("/fonts/icomoon.ttf?q628ml") format('truetype'),
+             url("/fonts/icomoon.woff?q628ml") format('woff'),
+             url("/fonts/icomoon.svg?q628ml#icomoon") format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+    </style>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!--[if lt IE 9]>
+    <style type="text/css">
+    .nav-inner {top:0;}
+    .author-meta {position:static;top:0;}
+    .search-form {height:36px;}
+    </style>
+    <script type="text/javascript" src="https://unpkg.com/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <![endif]-->
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+
+    <main class="app">
+        <header id="header" class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">T0day&#39;Blog</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/talk">
+                <span class="nav-text">话术</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/paper">
+                <span class="nav-text">学术</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/tech">
+                <span class="nav-text">技术</span>
+            </a>
+        
+            <a class="nav-item" href="/tags">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="https://t0day.cn"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo是什么？"><span class="toc-number">1.</span> <span class="toc-text">Hexo是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何安装Hexo？"><span class="toc-number">2.</span> <span class="toc-text">如何安装Hexo？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo基础环境安装（以Mac为例）"><span class="toc-number">2.1.</span> <span class="toc-text">Hexo基础环境安装（以Mac为例）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Github部署Hexo"><span class="toc-number">2.2.</span> <span class="toc-text">Github部署Hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Concise模版的安装"><span class="toc-number">2.3.</span> <span class="toc-text">Concise模版的安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改配置文件"><span class="toc-number">2.4.</span> <span class="toc-text">修改配置文件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何写文章？"><span class="toc-number">3.</span> <span class="toc-text">如何写文章？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基础的文章"><span class="toc-number">3.1.</span> <span class="toc-text">基础的文章:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可以使用哪些有意思的插件"><span class="toc-number">4.</span> <span class="toc-text">可以使用哪些有意思的插件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#访问统计"><span class="toc-number">4.1.</span> <span class="toc-text">访问统计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#后期的计划"><span class="toc-number">5.</span> <span class="toc-text">后期的计划</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-number">6.</span> <span class="toc-text">参考文献:</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content">
+            <div id="wrapper" class="wrapper" style="max-width: 800px">
+                <article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            Hexo安装记录
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="https://t0day.cn/2020/01/28/hexo-tutorials/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2020-01-28T04:49:36.000Z" itemprop="datePublished">2020-01-28</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Hexo/" rel="tag">Hexo</a>, <a class="article-tag-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" rel="tag">软件安装</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <p>这篇文章是本站点使用Hexo框架以及Concise模版进行安装的纪实。我会不断更新文章，探索出更多有用的功能。本文按照这些问题的思路来进行一步步的安装！ </p>
+<ul>
+<li>Q1: Hexo是什么？</li>
+<li>Q2: 如何安装Hexo？</li>
+<li>Q3: 如何写文章？</li>
+<li>Q4: 可以使用哪些有意思的插件？</li>
+</ul>
+<a id="more"></a>
+
+<h2 id="Hexo是什么？"><a href="#Hexo是什么？" class="headerlink" title="Hexo是什么？"></a>Hexo是什么？</h2><blockquote>
+<p>问题分析：Hexo的概述 -&gt; Hexo的部署方式  -&gt; Hexo的优点</p>
+</blockquote>
+<p>Hexo是一款基于Node.js的一个快速、简洁且高效的<strong>博客框架</strong>。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页，你可以把生成的静态网页上传到 Web 服务器上，这里我们选用的是 <strong>GitHub 做 Web 服务</strong>，然后就可以访问到博客站点，因为每个页面都是静态的，所以访问速度是非常快的，用户体验非常好。</p>
+<h2 id="如何安装Hexo？"><a href="#如何安装Hexo？" class="headerlink" title="如何安装Hexo？"></a>如何安装Hexo？</h2><blockquote>
+<p>问题分析: Hexo基础环境怎么安装 -&gt; Hexo 如何在Github上展示 -&gt; Concise模版怎么安装？-&gt; 相关配置文件的设置</p>
+</blockquote>
+<h3 id="Hexo基础环境安装（以Mac为例）"><a href="#Hexo基础环境安装（以Mac为例）" class="headerlink" title="Hexo基础环境安装（以Mac为例）"></a>Hexo基础环境安装（以Mac为例）</h3><ul>
+<li>首先下载 <a href="http://nodejs.org/" target="_blank" rel="noopener">nodejs 环境</a> </li>
+<li>安装Hexo框架包: <ul>
+<li><code>npm install -g hexo-cli</code></li>
+</ul>
+</li>
+<li>创建站点: <ul>
+<li><code>hexo init my-blog</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="Github部署Hexo"><a href="#Github部署Hexo" class="headerlink" title="Github部署Hexo"></a>Github部署Hexo</h3><ul>
+<li>在github中新建一个repo, repo的名字为 your-blog-name.github.io</li>
+<li>安装hexo-deployer-git, 从而可以利用hexo deploy命令将内容上传到刚刚建立的repo中: <ul>
+<li><code>npm install --save hexo-deployer-git</code></li>
+</ul>
+</li>
+<li>为了成功部署，修改根目录下的 _config.yml 配置文件中的deploy部分,如下: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;your-name&#x2F;your-blog.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></li>
+<li>完成部署和发布:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">## 生成文件</span><br><span class="line">hexo generate</span><br><span class="line"></span><br><span class="line">## 部署到github中，上传的文件存储于: .deploy_git目录</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="Concise模版的安装"><a href="#Concise模版的安装" class="headerlink" title="Concise模版的安装"></a>Concise模版的安装</h3><blockquote>
+<p><a href="https://github.com/sanonz/hexo-theme-concise" target="_blank" rel="noopener">Concise</a>是本站所用的模版</p>
+</blockquote>
+<ul>
+<li>模版下载到本地: <ul>
+<li><code>git clone git@github.com:sanonz/hexo-theme-concise.git themes/concise</code></li>
+</ul>
+</li>
+<li>在 <code>\_config.yml</code> 配置文件中把theme值改为concise.</li>
+<li>复制 <code>themes/concise/\_config.example.yml</code> 配置文件为 <code>themes/concise/\_config.yml</code></li>
+<li>为了更好生成静态文件, 安装Hexo编译器hexo-renderer-less: <ul>
+<li><code>npm install hexo-renderer-less --save</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h3><ul>
+<li><p>网站根目录下的Hexo配置文件_config.yml,可以修改网站信息,比如title, author, url等信息</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: T0day&#39;Blog</span><br><span class="line">author: T0day</span><br><span class="line">url: https:&#x2F;&#x2F;t0day.cn</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>concise模版下的配置文件themes/concise/_config.yml, 可以修改网站页面模版展示的<strong>内容</strong>。比如修改: author信息, gittalk密钥, menu菜单.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># Header</span><br><span class="line">menu:</span><br><span class="line">  首页: &#x2F;</span><br><span class="line">  话术: &#x2F;categories&#x2F;talk</span><br><span class="line">  学术: &#x2F;categories&#x2F;paper</span><br><span class="line">...</span><br><span class="line"># github comment</span><br><span class="line">git_commit:</span><br><span class="line">  enable: true</span><br><span class="line">  client_id: xxx</span><br><span class="line">...</span><br><span class="line">links:</span><br><span class="line">  - svg: .&#x2F;source&#x2F;svg&#x2F;github.svg</span><br><span class="line">    url: https:&#x2F;&#x2F;github.com&#x2F;hi-T0day</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h2 id="如何写文章？"><a href="#如何写文章？" class="headerlink" title="如何写文章？"></a>如何写文章？</h2><blockquote>
+<p>问题分析：基础的文章是怎么写的，如何更好的写文章! </p>
+</blockquote>
+<h3 id="基础的文章"><a href="#基础的文章" class="headerlink" title="基础的文章:"></a>基础的文章:</h3><ul>
+<li><p>通过<code>hexo new hexo-tutorials</code>命令创建新文章</p>
+</li>
+<li><p>可以关闭单个文章的评论，把 comments 设置为 false，默认为 true，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">date: 2017-10-20 20:00:00</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure></li>
+<li><p>添加分类列表，设置文章的 categories 字段然后访问 /categories/front-end</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">date: 2017-10-20 20:00:00</span><br><span class="line">categories: front-end</span><br><span class="line">---</span><br></pre></td></tr></table></figure></li>
+<li><p>列表文章显示 阅读更多 按钮，在需要截断的地方插入 <code>&lt;!-- more --&gt;</code> 注释</p>
+</li>
+<li><p>添加文章的tag标签, 如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo安装记录</span><br><span class="line">date: 2020-01-28 12:49:36</span><br><span class="line">categories: tech</span><br><span class="line">tags: </span><br><span class="line">	- 软件安装</span><br><span class="line">	- Hexo	</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>针对于访问 Tags 页面 404，执行<code>hexo new page tags</code>命令，然后修改 source\tags\index.md 文件，添加 layout: tags</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2019-09-29 17:27:33</span><br><span class="line">layout: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>与新建tags页面类似, 执行 <code>hexo new page about</code>命令, 编辑 source\about\index.md 文件</p>
+</li>
+</ul>
+<h2 id="可以使用哪些有意思的插件"><a href="#可以使用哪些有意思的插件" class="headerlink" title="可以使用哪些有意思的插件"></a>可以使用哪些有意思的插件</h2><blockquote>
+<p>访问统计、gittalk、</p>
+</blockquote>
+<h3 id="访问统计"><a href="#访问统计" class="headerlink" title="访问统计"></a>访问统计</h3><p>Concise 在某次代码<a href="https://github.com/sanonz/hexo-theme-concise/commit/ffee635fbabd8dcb7112949bd082796fc0944cc3" target="_blank" rel="noopener">更新</a>, 将友盟替换为Baidu统计。为了体验其差别, 本博客修改模版代码, 使同时兼容两种访问统计。</p>
+<ol>
+<li>首先修改模版文件<code>themes/concise/layout/_partial/footer.ejs</code>, 增加<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if( theme.umeng &amp;&amp; theme.umeng.prefix &amp;&amp; theme.umeng.id ) &#123; %&gt;</span><br><span class="line">    &amp;ensp;</span><br><span class="line">    &lt;span id&#x3D;&quot;cnzz_stat_icon_&lt;%&#x3D; theme.umeng.id %&gt;&quot; class&#x3D;&quot;vm&quot;&gt;&lt;&#x2F;span&gt;</span><br><span class="line">    &lt;script src&#x3D;&quot;&#x2F;&#x2F;&lt;%&#x3D; theme.umeng.prefix %&gt;.cnzz.com&#x2F;stat.php?id&#x3D;&lt;%&#x3D; theme.umeng.id %&gt;&amp;show&#x3D;pic&quot; type&#x3D;&quot;text&#x2F;javascript&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure></li>
+<li>在模版的配置文件 themes/concise/_config.yml, 中增加友盟的选项:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Umeng</span><br><span class="line">umeng:</span><br><span class="line">  prefix: s13</span><br><span class="line">  id: 1273590743</span><br></pre></td></tr></table></figure></li>
+<li><a href="https://tongji.baidu.com/" target="_blank" rel="noopener">百度统计</a> 然后获取 ID 填写到这里</li>
+<li><a href="http://web.umeng.com/main.php?c=user&a=index" target="_blank" rel="noopener">Umeng</a> 然后获取域名前缀与 ID 填写到这里</li>
+</ol>
+<h2 id="后期的计划"><a href="#后期的计划" class="headerlink" title="后期的计划"></a>后期的计划</h2><ol>
+<li>对 gittalk 部分撰写</li>
+<li>对 访问统计 部分撰写</li>
+<li>对 HTTPS 撰写</li>
+<li>根据官方的文档进行Hexo功能的探索。</li>
+<li>看一看concise 的issues</li>
+</ol>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献:"></a>参考文献:</h2><ol>
+<li><a href="https://sanonz.github.io/2017/hello-world/#%E5%AE%89%E8%A3%85%E5%89%8D%E6%8F%90" target="_blank" rel="noopener">Hexo 搭建静态博客与 hexo-theme-concise 主题使用教程</a></li>
+<li><a href="https://github.com/sanonz/hexo-theme-concise" target="_blank" rel="noopener">Github:hexo-theme-concise</a></li>
+<li><a href="https://blog.csdn.net/qq_2300688967/article/details/81094140" target="_blank" rel="noopener">git 为不同的项目设置不同的用户名和邮箱</a></li>
+</ol>
+
+        
+    </section>
+</article>
+
+
+
+<a id="pagenext" href="/2020/01/28/welcome/" class="article-next" title="welcome"><i class="icon-arrow-right"></i></a>
+
+
+
+
+<div class="comments">
+    <div id="comments"></div>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+    new Gitalk({
+        clientID: "b7cb3a465aa2dcd3e4f9",
+        clientSecret: "a54b3925c9f53b203467b82c114e74ae1bcede44",
+        repo: "hi-T0day.github.io",
+        owner: "hi-T0day",
+        admin: ["hi-T0day"],
+        id: "2020/01/28/hexo-tutorials",
+        distractionFreeMode: true,
+        title: "Hexo安装记录",
+        body: "https://t0day.cn/2020/01/28/hexo-tutorials/",
+        labels: ["软件安装","Hexo"]
+    }).render('comments');
+    </script>
+</div>
+
+
+            </div>
+        </div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?d0ed02622dc3bd6a1df1c2284a01f999";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        
+<script src="/js/scrollspy.min.js"></script>
+
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+
+        $(window).on('resize', function() {
+            var hw = $('#header').width();
+            var ww = $('#wrapper').width();
+            var space = ($(this).width() - hw - ww) / 2 / 2;
+
+            var pageprev = $('#pageprev');
+            var pagenext = $('#pagenext');
+            var avg = (pageprev.width() + pagenext.width()) / 2
+
+            if(space > avg) {
+                var len = space - avg / 2;
+                var styles = {position: 'fixed', top: '50%', marginTop: - (pageprev.width() + pagenext.width()) / 4}
+                pageprev.css($.extend({left: hw + len}, styles));
+                pagenext.css($.extend({right: len}, styles));
+            } else {
+                pageprev.removeAttr('style');
+                pagenext.removeAttr('style');
+            }
+        }).trigger('resize');
+        </script>
+    
+
+</body>
+</html>
