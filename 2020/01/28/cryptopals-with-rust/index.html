@@ -10,7 +10,7 @@
     <title>用rust完成cryptopals | T0day&#39;Blog</title>
     <meta name="author" content="T0day" />
     <meta name="keywords" content="" />
-    <meta name="description" content="写在最前面: 今年春节距离网上办公, 还有6天。这6天里我会奋发努力, 完成cryptopals的前5个章节, 将rust学通透。我的目标: 代码的记忆。能够将cryptopals的rust代码重写出来。给读者的: 讲解rust代码结构。讲解密码学中的弯弯绕绕。什么是cryptopals呢？挑战方式每一个challenge, 先花5分钟时间整理思路。再花10分钟时间看答案, 在20分钟内, 进行代码复现(有3次思考机会)。代码的review花20分钟。过2天后, 再次复现代码20分..." />
+    <meta name="description" content="写在最前面: 今年春节距离网上办公, 还有6天。这6天里我会奋发努力, 完成cryptopals的前5个章节, 将rust学通透。我的目标: 代码的记忆。能够将cryptopals的rust代码重写出来。给读者的: 讲解rust代码结构。讲解密码学中的弯弯绕绕。什么是cryptopals呢？挑战方式每一个challenge, 先花5分钟时间整理思路。再花10分钟时间看答案, 在20分钟内, 进行代码复现(有3次思考机会)。代码的review花20分钟。过2天后, 再次复现代码2..." />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
 
@@ -101,7 +101,7 @@
         
 
         
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#挑战方式"><span class="toc-number">1.</span> <span class="toc-text">挑战方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#完成情况"><span class="toc-number">1.1.</span> <span class="toc-text">完成情况</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#C1-1"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">C1.1</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#挑战方式"><span class="toc-number">1.</span> <span class="toc-text">挑战方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#完成情况"><span class="toc-number">1.1.</span> <span class="toc-text">完成情况</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#C1-1"><span class="toc-number">1.1.1.</span> <span class="toc-text">C1.1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C1-2"><span class="toc-number">1.1.2.</span> <span class="toc-text">C1.2</span></a></li></ol></li></ol></li></ol>
         
     </div>
 </aside>
@@ -141,15 +141,13 @@
         <blockquote>
 <p>写在最前面: 今年春节距离网上办公, 还有6天。这6天里我会奋发努力, 完成cryptopals的前5个章节, 将rust学通透。<br>我的目标: 代码的记忆。能够将cryptopals的rust代码重写出来。<br>给读者的: 讲解rust代码结构。讲解密码学中的弯弯绕绕。<br>什么是cryptopals呢？</p>
 </blockquote>
+<a id="more"></a>
+
 <h2 id="挑战方式"><a href="#挑战方式" class="headerlink" title="挑战方式"></a>挑战方式</h2><blockquote>
 <p>每一个challenge, 先花5分钟时间整理思路。再花10分钟时间看答案, 在20分钟内, 进行代码复现(有3次思考机会)。代码的review花20分钟。过2天后, 再次复现代码20分钟。</p>
 </blockquote>
-<h3 id="完成情况"><a href="#完成情况" class="headerlink" title="完成情况"></a>完成情况</h3><h5 id="C1-1"><a href="#C1-1" class="headerlink" title="C1.1"></a>C1.1</h5><blockquote>
-<blockquote>
-<blockquote>
+<h3 id="完成情况"><a href="#完成情况" class="headerlink" title="完成情况"></a>完成情况</h3><h4 id="C1-1"><a href="#C1-1" class="headerlink" title="C1.1"></a>C1.1</h4><blockquote>
 <p>看题目5分钟, 看答案15分钟, 代码复现1小时。<br>C1.1 备注: </p>
-</blockquote>
-</blockquote>
 </blockquote>
 <ul>
 <li>match 后面跟着的是 <strong>逗号</strong></li>
@@ -157,7 +155,15 @@
 <li>char 类型数字变成标准数字，需要利用to_digit(16) 进行转换。再跟上 as u8</li>
 <li>chunks(var int) 是对slice进行分组。</li>
 <li>在bin目录的cargo中，通过以下实现了lib与bin的分离 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[dependencies.serialize]</span><br><span class="line">path &#x3D; &quot;..&#x2F;serialize&quot;</span><br></pre></td></tr></table></figure>
+
 </li>
+</ul>
+<h4 id="C1-2"><a href="#C1-2" class="headerlink" title="C1.2"></a>C1.2</h4><blockquote>
+<p>看题目5分钟, 看答案20分钟, 代码复现1小时。<br>C1.2 备注:</p>
+</blockquote>
+<ul>
+<li>遗留问题，什么情况下，可以解引用: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cannot use &#96;^&#x3D;&#96; on type &#96;&amp;mut u8&#96;</span><br><span class="line">help: &#96;^&#x3D;&#96; can be used on &#39;u8&#39;, you can dereference &#96;a&#96;</span><br></pre></td></tr></table></figure></li>
+<li>针对于迭代器，可以使用zip来同时对两个数组迭代。</li>
 </ul>
 
         
